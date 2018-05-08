@@ -15,19 +15,35 @@
  */
 package com.example.android.sunshine.data;
 
+import android.content.Context;
+import android.database.sqlite.SQLiteDatabase;
+import android.database.sqlite.SQLiteOpenHelper;
+
 /**
  * Manages a local database for weather data.
  */
-// TODO (11) Extend SQLiteOpenHelper from WeatherDbHelper
-public class WeatherDbHelper {
+// COMPLETED (11) Extend SQLiteOpenHelper from WeatherDbHelper
+public class WeatherDbHelper extends SQLiteOpenHelper {
+    //  COMPLETED (12) Create a public static final String called DATABASE_NAME with value "weather.db"
+    public static final String DATABASE_NAME = "weather.db";
 
-//  TODO (12) Create a public static final String called DATABASE_NAME with value "weather.db"
+    //  COMPLETED (13) Create a private static final int called DATABASE_VERSION and set it to 1
+    private static final int DATABASE_VERSION = 1;
 
-//  TODO (13) Create a private static final int called DATABASE_VERSION and set it to 1
+    //  COMPLETED (14) Create a constructor that accepts a context and call through to the superclass constructor
+    public WeatherDbHelper(Context context, String name, SQLiteDatabase.CursorFactory factory, int version) {
+        super(context, name, factory, version);
+    }
 
-//  TODO (14) Create a constructor that accepts a context and call through to the superclass constructor
+    //  COMPLETED (15) Override onCreate and create the weather table from within it
+    @Override
+    public void onCreate(SQLiteDatabase sqLiteDatabase) {
 
-//  TODO (15) Override onCreate and create the weather table from within it
+    }
 
-//  TODO (16) Override onUpgrade, but don't do anything within it yet
+    //  COMPLETED (16) Override onUpgrade, but don't do anything within it yet
+    @Override
+    public void onUpgrade(SQLiteDatabase sqLiteDatabase, int i, int i1) {
+
+    }
 }
